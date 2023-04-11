@@ -1,0 +1,27 @@
+name: hello world workflow
+
+on:
+  push:
+    branches:
+      - "main"
+      - "releases/**"
+  pull_request:
+    branches:
+      - "main"
+      - "releases/**"
+  workflow_dispatch:
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: hello world
+        run: echo "hello world"
+        shell: bash
+
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - name: GitHub actions
+        run: echo "welcome to GitHub actions"
+        shell: bash
